@@ -3,7 +3,7 @@ setwd("~/Technical/R/John Hopkins School of Public Health/ExploringData/Project1
 library(sqldf)
 library(lubridate)
 
-fileconnection<-file("household_power_consumption.txt")
+fileconnection<-file("../household_power_consumption.txt")
 
 
 import<-sqldf('select * from fileconnection 
@@ -54,7 +54,8 @@ legend("topright"
 plot (dmy_hms(paste(import$Date,import$Time , sep=" "))
       , import$Global_reactive_power 
       ,xlab="datetime"
-      ,ty="lines")
+      ,ty="lines"
+      ,ylab="Global_reactive_power")
 
 
 par(mfrow=c(1,1)
